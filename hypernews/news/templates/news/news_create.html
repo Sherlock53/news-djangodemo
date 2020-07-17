@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>Hyper news</h2>
+<form  method="post">{% csrf_token %}
+    <p>News Title:</p>
+    <input type="text" name="title">
+    <p>News Text:</p>
+    <input type="text" name="news_text">
+    <button type="submit">Submit</button>
+</form>
+<a href="/news/"  target="_blank" >Go back to main page</a>
+</body>
+</html>

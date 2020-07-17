@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h2>Hyper news</h2>
+<form  method="get">
+    <input type="text" name="q">
+    <button type="submit">Search</button>
+</form>
+{% regroup news_data by created as news_list %}
+    {% for dates in news_list %}
+    <h4>{{ dates.grouper }}</h4>
+        <ul>
+            {% for news in dates.list %}
+            <li><a target="_blank" href="/news/{{ news.link }}/">
+                {{ news.title }}
+            </a>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+<a href="/news/create/"  target="_blank" >Hyperlink shown to user</a>
+</body>
+</html>
